@@ -12,8 +12,8 @@ public class Task2 {
     private static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Circle circle = getCircle();
-        List<Point> points = getPoints();
+        Circle circle = getCircle(args[0]);
+        List<Point> points = getPoints(args[1]);
         for(Point point : points){
             Point displaced = new Point(point.x - circle.coordinates.x, point.y - circle.coordinates.y);
             float distanceToZeroCoords = (float) Math.sqrt(displaced.x*displaced.x + displaced.y*displaced.y);
@@ -23,9 +23,8 @@ public class Task2 {
         }
     }
 
-    private static Circle getCircle() {
+    private static Circle getCircle(String location) {
         Circle circle = new Circle();
-        String location = sc.nextLine();
         try {
             BufferedReader file1Reader = new BufferedReader(new FileReader(location));
             String file1 = file1Reader.readLine();
@@ -40,9 +39,8 @@ public class Task2 {
         return circle;
     }
 
-    private static List<Point> getPoints() {
+    private static List<Point> getPoints(String location) {
         ArrayList<Point> points = new ArrayList<>();
-        String location = sc.nextLine();
         try {
             BufferedReader file2Reader = new BufferedReader(new FileReader(location));
             String line = file2Reader.readLine();

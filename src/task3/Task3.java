@@ -15,9 +15,9 @@ public class Task3 {
     private static Integer currentId;
 
     public static void main(String[] args) {
-        String valuesLocation = sc.nextLine();
+        String valuesLocation = args[0];
         List<String> values = getLinesFromFile(valuesLocation);
-        String testsLocation = sc.nextLine();
+        String testsLocation = args[1];
         List<String> tests = getLinesFromFile(testsLocation);
         Map<Integer, String> parsedValues = parseValues(values);
         for(int i = 0; i < tests.size(); i++) {

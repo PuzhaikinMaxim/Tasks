@@ -11,7 +11,7 @@ public class Task4 {
     private static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        String location = sc.nextLine();
+        String location = args[0];
         List<Integer> values = getValues(location);
         Integer averageValue = values.stream().mapToInt(Integer::intValue).sum()/values.size();
         Double leastDifference = Double.MAX_VALUE;

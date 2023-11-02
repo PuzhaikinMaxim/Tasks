@@ -1,5 +1,6 @@
 package task1;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Task1 {
@@ -7,9 +8,10 @@ public class Task1 {
     private static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        int n = sc.nextInt();
+        int[] nm = Arrays.stream(sc.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+        int n = nm[0];
 
-        int m = sc.nextInt();
+        int m = nm[1];
         m = Math.max(0, m - 1);
 
         int current = 1;
